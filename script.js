@@ -92,18 +92,19 @@ function runSimulation() {
 
   const { fertilityRate, initialPopulation } = data;
   const generations = 4;
-  const years = Array.from({ length: generations + 1 }, (_, i) => i * 30);
+  const years = Array.from({ length: generations + 1 }, (_, i) => (i * 30));
   const pop = simulatePopulation(fertilityRate, generations, initialPopulation);
 
   const statsDiv = document.getElementById("stats");
-  statsDiv.innerHTML = `<strong>Initial Population:</strong> ${initialPopulation.toLocaleString()}<br>`;
+  statsDiv.innerHTML = `<strong>Fertility Rate (2025):</strong> ${fertilityRate.toLocaleString()}<br>`;
+  statsDiv.innerHTML += `<strong>Initial Population (2025):</strong> ${initialPopulation.toLocaleString()}<br>`;
 
   for (let i = 1; i < pop.length; i++) {
     const percentChange = ((pop[i] - pop[0]) / pop[0] * 100).toFixed(2);
     statsDiv.innerHTML += `Generation ${i}: ${percentChange}% change<br>`;
   }
 
-  statsDiv.innerHTML += `<strong>Ending Population:</strong> ${Math.round(pop[pop.length - 1]).toLocaleString()}`;
+  statsDiv.innerHTML += `<strong>Ending Population (2145):</strong> ${Math.round(pop[pop.length - 1]).toLocaleString()}`;
 
   const trace = {
     x: years,
