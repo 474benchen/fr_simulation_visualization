@@ -4,7 +4,7 @@ This is a simple interactive website that simulates future population trends bas
 
 ## How to Use
 
-1. Enter the name of a country (e.g., `USA`, `Japan`, `India`)
+1. Enter the name of a country (e.g., `United States`, `Japan`, `India`)
 2. Click "Simulate"
 3. View the interactive plot!
 
